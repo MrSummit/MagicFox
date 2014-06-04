@@ -1,0 +1,5 @@
+INDEX VERSION 1.126
+G:\Magic Fox\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3385531930.index
+\Magic Fox\src
+G:\Magic Fox\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1717797924.index
+\Magic Fox\src

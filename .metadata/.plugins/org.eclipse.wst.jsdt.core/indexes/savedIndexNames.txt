@@ -1,0 +1,8 @@
+INDEX VERSION 1.3+G:\Magic Fox\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2765667211.index
+810652333.index
+3385531930.index
+235920100.index
+1816466888.index
+1164932229.index
+3309568979.index
