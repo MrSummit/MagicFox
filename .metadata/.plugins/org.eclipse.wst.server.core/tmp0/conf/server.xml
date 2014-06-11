@@ -125,7 +125,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
-      <Context docBase="G:\Magic Fox\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="G:\Magic Fox\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Magic Fox" path="/Magic_Fox" reloadable="true" source="org.eclipse.jst.jee.server:Magic Fox"/></Host>
+      <Context docBase="G:\Magic Fox\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="G:\Magic Fox\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Magic Fox" path="/Magic_Fox" reloadable="true" source="org.eclipse.jst.jee.server:Magic Fox"/><Context docBase="G:\Magic Fox\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\CH6" path="/CH6" reloadable="true" source="org.eclipse.jst.jee.server:CH6"/><Context docBase="G:\Magic Fox\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\CH3" path="/CH3" reloadable="true" source="org.eclipse.jst.jee.server:CH3"/></Host>
     </Engine>
   </Service>
 </Server>

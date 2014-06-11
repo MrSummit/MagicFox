@@ -111,11 +111,14 @@ a:active
 	margin: 0 auto;
 }
 .theme .title{
-	
-	text-align:center; 
+	text-align: center;
+	margin: 0;
 }
-.theme .title a{
+.theme .title input{
+	display: inline;
+	border:0 none;
 	color:#6f6d85;
+	font-size: 30px;
 }
 /*主题定义结束*/
 .main{

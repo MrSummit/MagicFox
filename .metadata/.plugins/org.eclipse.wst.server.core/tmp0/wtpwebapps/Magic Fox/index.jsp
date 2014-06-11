@@ -1,4 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page import="java.sql.*" %>
+<jsp:useBean id="sql" class="model.home.Theme" scope="page"/>
+	<%
+		ResultSet study,work,life;
+		study=sql.getStudy();
+		work=sql.getWork();
+		life=sql.getLife();
+	%>
 <!DOCTYPE html ./View/Home/Public "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -43,69 +51,49 @@
 	<!--结束nav部分-->
 	<!--开始main部分-->
 	<div class="main">
+	
 		<div class="clude">
 			<div class="article study">
 				<h1>stay hungry , stay foolish</h1>
-				<div class="theme webIndex">
-					<img src="./View/Home/Public/Image/webIndex.jpg" >
-					<p class="title"><a href="">WEB前端</a></p>
-					<p>让条框滚蛋吧，从今天起学习HTML5、CSS3、JQuery
-					</p>
+				<%while(study.next()) {%>
+				<div class=<%="'theme "+study.getString(3)+"'" %>>
+					<img src=<%="'./View/Home/Public/Image/Index/"+study.getString(3)+".jpg'" %>>
+					<form action="" class="title">
+						<input type="hidden" name="title" value=<%=study.getString(3)%>>
+						<input type="submit" value=<%=study.getString(4)%>>
+					</form>
+					<p><%=study.getString(5)%>
 				</div>
-				<div class="theme webAdmin">
-					<img src="./View/Home/Public/Image/webAdmin.jpg" >
-					<p class="title"><a href="">WEB后端</a></p>
-					<p>跟随最新技术，养条大蟒蛇Python,打造红宝石Ruby
-					</p>
-				</div>
-				<div class="theme system">
-					<img src="./View/Home/Public/Image/system.jpg" >
-					<p class="title"><a href="">System</a></p>
-					<p>系统决定一切，使用linux，不要忘了神器C/C++和JAVA
-					</p>
-				</div>
+				<%} %>
 			</div>
 			<div class="article work">
 				<h1>Work is worth doing of worth doing well</h1>
-				<div class="theme volunteer">
-					<img src="./View/Home/Public/Image/volunteer.jpg" >
-					<p class="title"><a href="">volunteer</a></p>
-					<p>青奥会在南京举行，我是一名交通志愿者
+				<%while(work.next()) {%>
+				<div class=<%="'theme "+work.getString(3)+"'" %>>
+					<img src=<%="'./View/Home/Public/Image/Index/"+work.getString(3)+".jpg'" %>>
+					<form action="" class="title">
+						<input type="hidden" name="title" value=<%=work.getString(3)%>>
+						<input type="submit" value=<%=work.getString(4)%>>
+					</form>
+					<p><%=work.getString(5)%>
 					</p>
 				</div>
+				<%} %>
 			</div>
 			<div class="article life">
 				<h1>Love rules my kingdom without a sword</h1>
-				<div class="theme soccer">
-					<img src="./View/Home/Public/Image/soccer.jpg" >
-					<p class="title"><a href="">足球</a></p>
-					<p>一切皆有可能，在我的地盘你只能当观众
+				<%while(life.next()) {%>
+				<div class=<%="'theme "+life.getString(3)+"'" %>>
+					<img src=<%="'./View/Home/Public/Image/Index/"+life.getString(3)+".jpg'" %>>
+					<form action="" class="title">
+						<input type="hidden" name="title" value=<%=life.getString(3)%>>
+						<input type="submit" value=<%=life.getString(4)%>>
+					</form>
+					<p><%=life.getString(5)%>
 					</p>
 				</div>
-				<div class="theme guiter">
-					<img src="./View/Home/Public/Image/guiter.jpg" >
-					<p class="title"><a href="">Guiter</a></p>
-					<p>即使没人鼓掌又怎样，我只需要我的旋律，我只需要找到我自己
-					</p>
-				</div>
-				<div class="theme bicycle">
-					<img src="./View/Home/Public/Image/bicycle.jpg" >
-					<p class="title"><a href="">Bicycle</a></p>
-					<p>骑行，可以看到人生最美的风景，也会经历人生最大的痛苦
-					</p>
-				</div>
-				<div class="theme travel">
-					<img src="./View/Home/Public/Image/travel.jpg" >
-					<p class="title"><a href="">旅行</a></p>
-					<p>旅行，在对的时间遇到对的人
-					</p>
-				</div>
-				<div class="theme breaking">
-					<img src="./View/Home/Public/Image/breaking.jpg" >
-					<p class="title"><a href="">街舞</a></p>
-					<p>即使跌倒1000次，我还有第1001次跳跃的勇气
-					</p>
-				</div>
+				<%} %>
+				
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,62 @@
+package model.study;
+import java.sql.SQLException;
+
+import base.model.*;
+public class WebIndex {
+	String title="test",opus_id="5423423",uid="fox",subject="html",module="WebIndex",
+	theme="study",content="测试",time="412412414",last_time="142421";
+	
+	String info;
+	public String getTitle(){
+		return title;
+	}
+	public void setTitle(String title){
+		this.title=title;
+	}
+	public String getContent(){
+		return content;
+	}
+	public void setContent(String content){
+		this.content=content;
+	}
+	public String getOpus_id(){
+		return opus_id;
+	}
+	public void setOpus_id(String opus_id){
+		this.opus_id=opus_id;
+	}
+	public String getUid(){
+		return uid;
+	}
+	public void setUid(String uid){
+		this.uid=uid;
+	}
+	public String getSubject(){
+		return subject;
+	}
+	public void setSubject(String subject){
+		this.subject=subject;
+	}
+	public String  getInfo(){
+		String s="INSERT INTO mf_opus (opus_id, uid, subject, module,theme,title,content,time,last_time) VALUES ( "
+				+"'"+opus_id+"','"+uid+"','"+subject+"','"+module+"','"
+				+theme+"','"+title+"','"+content+"','"+time+"','"+last_time+"');";
+		create(s);
+		return info;
+	}
+	public String create(String s){
+		try{
+			Model datebase=new Model();
+			datebase.connect();
+			int i=datebase.update(s);
+			if(i!=0)
+			info="<p>创建成功</p>";
+			else 
+			info="创建失败"+s;
+		}
+		catch(Exception e){
+		
+		}
+		return info;
+	}
+}

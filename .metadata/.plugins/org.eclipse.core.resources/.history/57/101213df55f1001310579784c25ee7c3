@@ -1,0 +1,72 @@
+package model.study;
+import java.sql.SQLException;
+
+import base.model.*;
+public class WebIndex {
+	String title,opus_id,uid,subject="python",module="WebIndex",
+	theme="study",content,time="412412414",last_time="142421";
+	
+	String info="";
+	public String toS(String s){
+		String str;
+		try{
+		str = new String(s.getBytes("ISO-8859-1"),"utf-8");
+		}
+		catch(Exception e){str="";}
+		return str;
+	}
+	public String getTitle(){
+		return title;
+	}
+	public void setTitle(String title){
+		this.title=toS(title);
+	}
+	public String getContent(){
+		return content;
+	}
+	public void setContent(String content){
+		this.content=toS(content);
+	}
+	public String getOpus_id(){
+		return opus_id;
+	}
+	public void setOpus_id(String opus_id){
+		this.opus_id=toS(opus_id);
+	}
+	public String getUid(){
+		return uid;
+	}
+	public void setUid(String uid){
+		this.uid=toS(uid);
+	}
+	public String getSubject(){
+		return subject;
+	}
+	public void setSubject(String subject){
+		this.subject=toS(subject);
+	}
+	public String  getInfo(){
+		String s="INSERT INTO mf_opus (opus_id, uid, subject, module,theme,title,content,time,last_time) VALUES ( "
+				+"'"+opus_id+"','"+uid+"','"+subject+"','"+module+"','"
+				+theme+"','"+title+"','"+content+"','"+time+"','"+last_time+"');";
+		create(s);
+		return info;
+	}
+	public String create(String s){
+		try{
+			if(title!=null){
+			Model datebase=new Model();
+			datebase.connect();
+			int i=datebase.update(s);
+			if(i!=0)
+			info="<p>创建成功</p>";
+			else 
+			info="创建失败"+s;
+			}
+		}
+		catch(Exception e){
+		
+		}
+		return info;
+	}
+}

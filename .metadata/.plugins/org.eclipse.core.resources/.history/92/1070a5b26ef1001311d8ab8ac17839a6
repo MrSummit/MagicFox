@@ -1,0 +1,108 @@
+package model.home;
+import java.sql.*;
+import base.model.*;
+public class Theme {
+	String belong,title,link,intro,action="";
+	StringBuffer study,work,life;
+	String info="";
+	public String toS(String s){
+		String str;
+		try{
+		str = new String(s.getBytes("ISO-8859-1"),"utf-8");
+		}
+		catch(Exception e){str="";}
+		return str;
+	}
+	public String getTitle(){
+		return title;
+	}
+	public void setTitle(String title){
+		this.title=toS(title);
+	}
+	public String getBelong(){
+		return belong;
+	}
+	public void setBelong(String belong){
+		this.belong=toS(belong);
+	}
+	public String getLink(){
+		return link;
+	}
+	public void setLink(String link){
+		this.link=toS(link);
+	}
+	public String getIntro(){
+		return intro;
+	}
+	public void setIntro(String intro){
+		this.intro=toS(intro);
+	}
+	public String getAction(){
+		return action;
+	}
+	public void setAction(String action){
+		this.action=toS(action);
+	}
+	public String  getInfo(){
+		choose();
+		return info;
+	}
+	public StringBuffer	getStudy(){
+		study=show("study");
+		return study;
+	}
+	public StringBuffer	getWork(){
+		work=show("work");
+		return work;
+	}
+	public StringBuffer	getLife(){
+		life=show("life");
+		return life;
+	}
+	public void choose(){
+		if(action.compareTo("1")==0)
+		{
+			create();
+		}
+	}
+	public String create(){
+		String s="INSERT INTO mf_theme (belong, title, link, intro) VALUES ( "
+				+"'"+belong+"','"+title+"','"+link+"','"
+				+intro+"');";
+		try{
+			if(belong!=null){
+			Model datebase=new Model();
+			datebase.connect();
+			int i=datebase.update(s);
+			if(i!=0)
+			info="<p>创建成功</p>";
+			else 
+			info="创建失败"+s;
+			datebase.close();
+			}
+		}
+		catch(Exception e){
+		
+		}
+		return info;
+	}
+	public StringBuffer show(String s){
+		StringBuffer str=new StringBuffer();
+		Model datebase=new Model();
+		datebase.connect();
+		ResultSet rs;
+		try{
+			String ss="SELECT * FROM mf_theme Where blong='"+s+"'";
+			rs=datebase.find(ss);
+			while(rs.next()){
+				str.append("<div class='theme "+rs.getString(3)+"'>");
+				str.append("<img src='./View/Home/Public/Image/Theme/"+rs.getString(3)+".jpg'>");
+				str.append("<p class='title'><a href=''>"+rs.getString(4)+"</a></p><p>"+rs.getString(4)+"</p></div>");
+			}
+		}
+		catch(SQLException e)
+		{
+		}
+		return str;
+	}
+}

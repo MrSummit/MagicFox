@@ -1,5 +1,19 @@
 INDEX VERSION 1.126
+G:\Magic Fox\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3884640307.index
+\Magic Fox\src
 G:\Magic Fox\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3385531930.index
+\Magic Fox\src
+G:\Magic Fox\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2346375527.index
+\CH3\src
+G:\Magic Fox\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2753322397.index
+\CH3\src
+G:\Magic Fox\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3134515344.index
+\Magic Fox\src
+G:\Magic Fox\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3718267727.index
+\Magic Fox\src
+G:\Magic Fox\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1019161229.index
+\CH6\src
+G:\Magic Fox\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2668711704.index
 \Magic Fox\src
 G:\Magic Fox\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1717797924.index
 \Magic Fox\src
